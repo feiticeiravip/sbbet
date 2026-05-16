@@ -3,13 +3,13 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
 <title>Super Bancas</title>
 
 <!-- SEO -->
 <meta name="description" content="Super Bancas - Plataforma online moderna com acesso rápido e suporte via WhatsApp.">
-<meta name="keywords" content="super bancas, superbancas, superbancasbet, superbancasbet.com.br, jogos online, plataforma online">
+<meta name="keywords" content="super bancas, superbancas, superbancasbet, superbancasbet.com.br, jogos online">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Super Bancas">
 <meta name="theme-color" content="#000000">
@@ -32,7 +32,7 @@
 <!-- Favicon -->
 <link rel="icon" type="image/webp" href="logosb.webp">
 
-<!-- SEO Estruturado -->
+<!-- SEO JSON -->
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -54,16 +54,16 @@
 html,body{
     width:100%;
     height:100%;
-    overflow:hidden;
     background:#000;
+    overflow:hidden;
     font-family:Arial,sans-serif;
 }
 
-/* CONTAINER */
+/* APP */
 
-.site-wrapper{
+.app{
     width:100%;
-    height:100vh;
+    height:100dvh;
     overflow:hidden;
 }
 
@@ -71,7 +71,7 @@ html,body{
 
 iframe{
     width:100%;
-    height:100vh;
+    height:100%;
     border:none;
     display:block;
     background:#000;
@@ -81,28 +81,28 @@ iframe{
 
 .whatsapp-btn{
     position:fixed;
-    bottom:14px;
     right:14px;
-    width:46px;
-    height:46px;
+    bottom:14px;
+    width:44px;
+    height:44px;
     border-radius:50%;
     background:#25D366;
     display:flex;
     align-items:center;
     justify-content:center;
-    text-decoration:none;
     z-index:999;
-    box-shadow:0 0 18px rgba(37,211,102,0.35);
+    box-shadow:0 0 15px rgba(37,211,102,0.35);
     transition:0.25s;
+    text-decoration:none;
 }
 
 .whatsapp-btn:hover{
-    transform:scale(1.07);
+    transform:scale(1.06);
 }
 
 .whatsapp-btn svg{
-    width:24px;
-    height:24px;
+    width:23px;
+    height:23px;
     fill:#fff;
 }
 
@@ -111,7 +111,7 @@ iframe{
 .popup-overlay{
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,0.82);
+    background:rgba(0,0,0,0.84);
     display:flex;
     align-items:center;
     justify-content:center;
@@ -120,17 +120,17 @@ iframe{
 }
 
 .popup-box{
-    position:relative;
     width:100%;
-    max-width:900px;
-    animation:fade 0.35s ease;
+    max-width:920px;
+    position:relative;
+    animation:show 0.35s ease;
 }
 
 .popup-box img{
     width:100%;
-    display:block;
     border-radius:16px;
-    box-shadow:0 0 40px rgba(0,0,0,0.55);
+    display:block;
+    box-shadow:0 0 40px rgba(0,0,0,0.5);
 }
 
 .close-popup{
@@ -139,20 +139,19 @@ iframe{
     right:-12px;
     width:38px;
     height:38px;
-    border:none;
     border-radius:50%;
+    border:2px solid #fff;
     background:#000;
     color:#fff;
     font-size:22px;
     font-weight:bold;
     cursor:pointer;
-    border:2px solid #fff;
 }
 
-@keyframes fade{
+@keyframes show{
     from{
         opacity:0;
-        transform:scale(0.93);
+        transform:scale(0.92);
     }
     to{
         opacity:1;
@@ -160,12 +159,21 @@ iframe{
     }
 }
 
-/* MOBILE */
+/* MOBILE FIX */
 
-@media(max-width:768px){
+@media (max-width:768px){
+
+    html,
+    body,
+    .app{
+        height:100%;
+        overflow:auto;
+        -webkit-overflow-scrolling:touch;
+    }
 
     iframe{
-        height:100dvh;
+        min-height:100vh;
+        height:100vh;
     }
 
     .whatsapp-btn{
@@ -173,11 +181,6 @@ iframe{
         height:42px;
         bottom:12px;
         right:12px;
-    }
-
-    .whatsapp-btn svg{
-        width:21px;
-        height:21px;
     }
 
 }
@@ -201,15 +204,15 @@ iframe{
 
 </div>
 
-<!-- SITE -->
+<!-- APP -->
 
-<div class="site-wrapper">
+<div class="app">
 
     <iframe
         src="https://app.superbancas.club/pr/1hROl7pY"
         title="Super Bancas"
-        loading="eager"
-        allowfullscreen>
+        allowfullscreen
+        loading="eager">
     </iframe>
 
 </div>
@@ -217,10 +220,10 @@ iframe{
 <!-- WHATSAPP -->
 
 <a
-    href="https://wa.me/5583993370071"
-    target="_blank"
-    class="whatsapp-btn"
-    aria-label="WhatsApp Suporte">
+href="https://wa.me/5583993370071"
+target="_blank"
+class="whatsapp-btn"
+aria-label="WhatsApp">
 
 <svg viewBox="0 0 32 32">
 <path d="M16.04 3C8.84 3 3 8.74 3 15.82c0 2.5.74 4.94 2.13 7.03L3 29l6.36-2.08a13.2 13.2 0 0 0 6.68 1.8h.01C23.2 28.72 29 22.98 29 15.9 29 8.74 23.2 3 16.04 3zm0 23.43c-2.02 0-4-.54-5.74-1.57l-.41-.24-3.77 1.23 1.24-3.66-.27-.42a10.37 10.37 0 0 1-1.6-5.55c0-5.74 4.73-10.4 10.55-10.4 5.8 0 10.53 4.66 10.53 10.4 0 5.75-4.72 10.41-10.53 10.41zm5.78-7.82c-.31-.15-1.84-.9-2.13-1-.28-.1-.48-.15-.68.15-.2.3-.78 1-.95 1.2-.18.2-.35.22-.66.08-.3-.15-1.26-.46-2.4-1.47-.89-.78-1.5-1.74-1.68-2.04-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.08-.15-.68-1.62-.93-2.22-.24-.58-.49-.5-.68-.5h-.58c-.2 0-.52.08-.8.38-.27.3-1.05 1.02-1.05 2.49 0 1.47 1.08 2.89 1.23 3.09.15.2 2.13 3.34 5.26 4.55.74.32 1.33.5 1.78.64.75.24 1.44.2 1.98.12.6-.09 1.84-.75 2.1-1.47.26-.72.26-1.33.18-1.46-.08-.13-.28-.2-.58-.35z"/>
@@ -231,7 +234,7 @@ iframe{
 <script>
 
 function fecharPopup(){
-    document.getElementById('popup').style.display = 'none';
+    document.getElementById("popup").style.display = "none";
 }
 
 </script>
